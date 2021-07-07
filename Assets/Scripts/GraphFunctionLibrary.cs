@@ -44,30 +44,7 @@ public static class GraphFunctionLibrary
                 }
             }
 
-            GraphFunctionAnimated _function = (GraphFunctionAnimated)_index;
-            switch (_function)
-            {
-                case GraphFunctionAnimated.Wave:
-                    return Wave;
-
-                case GraphFunctionAnimated.MultiWave:
-                    return MultiWave;
-
-                case GraphFunctionAnimated.MultiWave2:
-                    return MultiWave2;
-
-                case GraphFunctionAnimated.Ripple:
-                    return Ripple;
-
-                case GraphFunctionAnimated.SpherePulsing:
-                    return SpherePulsing; 
-                
-                case GraphFunctionAnimated.SphereTwistingBandsSpinning:
-                    return SphereTwistingBandsSpinning;
-
-                case GraphFunctionAnimated.TwistedStarTorusTwisting:
-                    return TwistedStarTorusTwisting;
-            }
+            return GetAnimatedGraph(_index);
         }
         else
         {
@@ -93,91 +70,102 @@ public static class GraphFunctionLibrary
             if (_index > _lengthOfFirstEnumSet - 1)
             {
                 _index -= _lengthOfFirstEnumSet;
-                GraphFunctionNormal _function = (GraphFunctionNormal)_index;
-                switch (_function)
-                {
-                    case GraphFunctionNormal.Line:
-                        return Line;
+                return GetNormalGraph(_index);
 
-                    case GraphFunctionNormal.Squared:
-                        return Squared;
-
-                    case GraphFunctionNormal.Cubed:
-                        return Cubed;
-
-                    case GraphFunctionNormal.CircleFlat:
-                        return CircleFlat;
-
-                    case GraphFunctionNormal.CylinderHollow:
-                        return CylinderHollow;
-
-                    case GraphFunctionNormal.DiscFlat:
-                        return DiscFlat;
-
-                    case GraphFunctionNormal.SpiralStaircase:
-                        return SpiralStaircase;
-
-                    case GraphFunctionNormal.HourGlass:
-                        return HourGlass;
-
-                    case GraphFunctionNormal.Onion:
-                        return Onion;
-
-                    case GraphFunctionNormal.Sphere:
-                        return Sphere;
-
-                    case GraphFunctionNormal.SphereVerticalBands:
-                        return SphereVerticalBands;
-
-                    case GraphFunctionNormal.SphereHorizontalBands:
-                        return SphereHorizontalBands;
-
-                    case GraphFunctionNormal.SphereTwistingBands:
-                        return SphereTwistingBands;
-
-                    case GraphFunctionNormal.SphereCylinder:
-                        return SphereCylinder;
-
-                    case GraphFunctionNormal.SpindleTorus:
-                        return SpindleTorus;
-
-                    case GraphFunctionNormal.HornTorus:
-                        return HornTorus;
-
-                    case GraphFunctionNormal.RingTorus:
-                        return RingTorus;
-
-                    case GraphFunctionNormal.TwistedStarTorus:
-                        return TwistedStarTorus;
-                }
             }
-            else
-            {
-                GraphFunctionAnimated _function = (GraphFunctionAnimated)_index;
-                switch (_function)
-                {
-                    case GraphFunctionAnimated.Wave:
-                        return Wave;
+                
+            return GetAnimatedGraph(_index);
+        }
+    }
 
-                    case GraphFunctionAnimated.MultiWave:
-                        return MultiWave;
+    private static GraphFunction GetNormalGraph(int _index)
+    {
+        GraphFunctionNormal _function = (GraphFunctionNormal)_index;
+        switch (_function)
+        {
+            case GraphFunctionNormal.Line:
+                return Line;
 
-                    case GraphFunctionAnimated.MultiWave2:
-                        return MultiWave2;
+            case GraphFunctionNormal.Squared:
+                return Squared;
 
-                    case GraphFunctionAnimated.Ripple:
-                        return Ripple;
+            case GraphFunctionNormal.Cubed:
+                return Cubed;
 
-                    case GraphFunctionAnimated.SpherePulsing:
-                        return SpherePulsing;
+            case GraphFunctionNormal.CircleFlat:
+                return CircleFlat;
 
-                    case GraphFunctionAnimated.SphereTwistingBandsSpinning:
-                        return SphereTwistingBandsSpinning;
+            case GraphFunctionNormal.CylinderHollow:
+                return CylinderHollow;
 
-                    case GraphFunctionAnimated.TwistedStarTorusTwisting:
-                        return TwistedStarTorusTwisting;
-                }
-            }
+            case GraphFunctionNormal.DiscFlat:
+                return DiscFlat;
+
+            case GraphFunctionNormal.SpiralStaircase:
+                return SpiralStaircase;
+
+            case GraphFunctionNormal.HourGlass:
+                return HourGlass;
+
+            case GraphFunctionNormal.Onion:
+                return Onion;
+
+            case GraphFunctionNormal.Sphere:
+                return Sphere;
+
+            case GraphFunctionNormal.SphereVerticalBands:
+                return SphereVerticalBands;
+
+            case GraphFunctionNormal.SphereHorizontalBands:
+                return SphereHorizontalBands;
+
+            case GraphFunctionNormal.SphereTwistingBands:
+                return SphereTwistingBands;
+
+            case GraphFunctionNormal.SphereCylinder:
+                return SphereCylinder;
+
+            case GraphFunctionNormal.SpindleTorus:
+                return SpindleTorus;
+
+            case GraphFunctionNormal.HornTorus:
+                return HornTorus;
+
+            case GraphFunctionNormal.RingTorus:
+                return RingTorus;
+
+            case GraphFunctionNormal.TwistedStarTorus:
+                return TwistedStarTorus;
+        }
+
+        return null;
+    }
+
+    private static GraphFunction GetAnimatedGraph(int _index)
+    {
+        GraphFunctionAnimated _function = (GraphFunctionAnimated)_index;
+        switch (_function)
+        {
+            case GraphFunctionAnimated.Wave:
+                return Wave;
+
+            case GraphFunctionAnimated.MultiWave:
+                return MultiWave;
+
+            case GraphFunctionAnimated.MultiWave2:
+                return MultiWave2;
+
+            case GraphFunctionAnimated.Ripple:
+                return Ripple;
+
+            case GraphFunctionAnimated.SpherePulsing:
+                return SpherePulsing;
+
+            case GraphFunctionAnimated.SphereTwistingBandsSpinning:
+                return SphereTwistingBandsSpinning;
+
+            case GraphFunctionAnimated.TwistedStarTorusTwisting:
+                return TwistedStarTorusTwisting;
         }
 
         return null;
